@@ -22,7 +22,7 @@ class MenuDrawer extends StatelessWidget {
       'Training'
     ];
     List<Widget> menuItems = [];
-    menuItems.add(DrawerHeader(
+    menuItems.add(const DrawerHeader(
       decoration: BoxDecoration(color: Colors.blueGrey),
       child: Text(
         'Globo Fitness',
@@ -32,14 +32,14 @@ class MenuDrawer extends StatelessWidget {
     menuTitles.forEach((String element) {
       Widget screen = Container();
       menuItems.add(ListTile(
-        title: Text(element, style: TextStyle(fontSize: 18)),
+        title: Text(element, style: const TextStyle(fontSize: 18)),
         onTap: () {
           switch (element) {
             case 'Home':
-              screen = IntroScreen();
+              screen = const IntroScreen();
               break;
             case 'BMI Calculator':
-              screen = BmiScreen();
+              screen = const BmiScreen();
               break;
             default:
               break;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../shared/menu_bottom.dart';
 import '../shared/menu_drawer.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -9,21 +10,22 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Globo Fitness'),
+        title: const Text('Globo Fitness'),
       ),
-      drawer: MenuDrawer(),
+      drawer: const MenuDrawer(),
+      bottomNavigationBar: const MenuBottom(),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage('assets/home-screen.jpg'))),
         child: Center(
             child: Container(
-          padding: EdgeInsets.all(24),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(24),
+          decoration: const BoxDecoration(
               color: Colors.white70,
               borderRadius: BorderRadius.all(Radius.circular(20))),
-          child: Text(
+          child: const Text(
             'Commit to be fit, dare to be \ngreat with Globo Fitness',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 22, shadows: [
