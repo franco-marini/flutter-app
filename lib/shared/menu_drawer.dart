@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../screens/bmi_screen.dart';
+import '../screens/intro_screen.dart';
+
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
 
@@ -27,9 +30,24 @@ class MenuDrawer extends StatelessWidget {
       ),
     ));
     menuTitles.forEach((String element) {
+      Widget screen = Container();
       menuItems.add(ListTile(
         title: Text(element, style: TextStyle(fontSize: 18)),
-        onTap: () {},
+        onTap: () {
+          switch (element) {
+            case 'Home':
+              screen = IntroScreen();
+              break;
+            case 'BMI Calculator':
+              screen = BmiScreen();
+              break;
+            default:
+              break;
+          }
+          Navigator.of(context).pop();
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => screen));
+        },
       ));
     });
 
